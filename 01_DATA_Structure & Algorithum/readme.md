@@ -35,3 +35,7 @@ Merge
 Map
 Set
 
+---------------------------------------------------------------------
+Array Traversing and Accessing
+
+make HTML Page write Basic Array traversing with loop Accessing element Access element withe text input & button validation
