@@ -4,17 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stack With Javascript</title>
+</head>
+<body>
+    <h1>Stack with Javascript</h1>
+    <input type="text" placeholder="Enter Stack Elemtn" id="newEl">
+    <button onclick="push()">Add elemtn to Stack</button>
+    <button onclick="pop()">Remove Element to Stack</button>
+    <button onclick="Display()">Display All elements of Stack</button>
+
     <script>
         let data = [];
         let current_size = data.length;
         let max_value = 5;
 
-        function push(new_value){
+        function push(){
+            let new_value = document.getElementById("newEl").value
             if(current_size >= max_value){
                 alert("Stack is full"+ " "+ new_value)
-            }
-          data[current_size] = new_value
+            } else {
+                data[current_size] = new_value
           current_size+=1
+          document.getElementById("newEl").value="";
+          console.log("Element added")
+            }
+         
         }
 
         function pop(){
@@ -26,24 +39,17 @@
             }
         }
 
+        function Display(){
+            for(let i=0; i <= current_size-1; i++){
+                console.log("Stack Elemtn no", i ,"and value is",data[i])
+            }
+        }
 
-
-        push(23)
-        push(13)
-        push(33)
-        push(43)
-        pop()
-        pop()
-        pop()
-        pop()
-        pop()
-        
-        console.log(data)
+        // Stack with input and buttons
 
 
     </script>
-</head>
-<body>
+
 </body>
 </html>
 
