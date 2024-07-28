@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue Stack</title>
+</head>
+<body>
+
+
+
+<script>
+    let queue = []
+    let currentsize = queue.length;
+    let maxSize =  5
+    function enquue(newvalue){
+        if(currentsize >=maxSize){
+            alert("STack is already full")
+        }
+        queue[currentsize] = newvalue;
+        currentsize++
+    }
+  
+    function display(){
+        console.log(queue )
+    }
+
+    function dequeue(){
+        if (currentsize >0){
+            for(let i=0; i<queue.length; i++){
+            queue[i] =queue[i+1]
+        }
+        currentsize--
+        queue.length=currentsize
+        } else{
+            alert("queue is alreay empty")
+        }
+    }
+
+    
+
+    
+</script>
+
+</body>
+</html>
