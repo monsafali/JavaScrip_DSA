@@ -4,43 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Queue Stack</title>
+    <script>
+        let queue = []
+        let currentsize = queue.length;
+        let maxSize =  5
+
+        function enquueWithBTn() {
+                let newvalue = document.getElementById("qEl").value;
+                if (currentsize >= maxSize) {
+                    alert("Stack is already full");
+                } else {
+                    queue[currentsize] = newvalue;
+                    currentsize++;
+                }
+                document.getElementById("qEl").value = ""; // Clear the input field
+            }
+
+      
+        function display(){
+            console.log(queue )
+        }
+    
+        function dequeue(){
+            if (currentsize >0){
+                for(let i=0; i<queue.length; i++){
+                queue[i] =queue[i+1]
+            }
+            currentsize--
+            queue.length=currentsize
+            } else{
+                alert("queue is alreay empty")
+            }
+        }
+    
+    
+        function front(){
+            if(currentsize >0){
+                console.log(queue[0])
+            }else{
+                alert("Quest is alrdy empty")
+            }
+        }
+    
+    
+        function rear(){
+            if(!isEmpty()){
+                console.log(queue[currentsize-1])
+            }else{
+                alert("Quest is alrdy empty")
+            }
+        }
+    
+        function isEmpty(){
+            if(currentsize<=0){
+                return true;
+            } else{
+                return false;
+            }
+        }
+    
+        // front()
+        // rear()
+        // display()
+        // enquue(23)
+        // enquue(13)
+        // enquue(3)
+        
+    
+        
+    </script>
 </head>
 <body>
 
-
-
-<script>
-    let queue = []
-    let currentsize = queue.length;
-    let maxSize =  5
-    function enquue(newvalue){
-        if(currentsize >=maxSize){
-            alert("STack is already full")
-        }
-        queue[currentsize] = newvalue;
-        currentsize++
-    }
-  
-    function display(){
-        console.log(queue )
-    }
-
-    function dequeue(){
-        if (currentsize >0){
-            for(let i=0; i<queue.length; i++){
-            queue[i] =queue[i+1]
-        }
-        currentsize--
-        queue.length=currentsize
-        } else{
-            alert("queue is alreay empty")
-        }
-    }
-
+    <h1>Quesue with input elemtn in Javascript</h1>
+    <input placeholder="Enter element" id="qEl">
+    <br>
+    <button onclick="enquueWithBTn()">Add Eleemtn</button>
     
-
+    <button onclick="dequeue()">Remove Elemtn</button>
     
-</script>
+    <button onclick="display()">Display Element</button>
+ 
+    <button onclick="front()">Get Front Element</button>
+
+    <button onclick="rear()">Get Rear Element</button>
+
+
 
 </body>
 </html>
